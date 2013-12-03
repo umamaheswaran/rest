@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 12, 2012 4:50:07 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.yahoo.ads.adportal.entity.Contact" table="contact" catalog="world">
+        <id name="contactid" type="java.lang.Integer">
+            <column name="contactid" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="customer" class="com.yahoo.ads.adportal.entity.Customer" fetch="select">
+            <column name="customerid" not-null="true" />
+        </many-to-one>
+        <property name="firstName" type="string">
+            <column name="FirstName" length="25" />
+        </property>
+        <property name="middleName" type="string">
+            <column name="MiddleName" length="25" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LastName" length="25" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="40" />
+        </property>
+        <property name="addr1" type="string">
+            <column name="Addr1" length="40" />
+        </property>
+        <property name="addr2" type="string">
+            <column name="Addr2" length="40" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="20" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="20" />
+        </property>
+        <property name="zip" type="string">
+            <column name="zip" length="10" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="3" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="1" />
+        </property>
+        <property name="logo" type="binary">
+            <column name="logo" />
+        </property>
+        <property name="login" type="string">
+            <column name="login" length="25" />
+        </property>
+        <property name="pwd" type="string">
+            <column name="pwd" length="25" />
+        </property>
+        <property name="division" type="string">
+            <column name="division" length="20" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="create_date" length="10" />
+        </property>
+        <property name="lastUpdate" type="date">
+            <column name="last_update" length="10" />
+        </property>
+        <set name="products" table="product" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="contactid" not-null="true" />
+            </key>
+            <one-to-many class="com.yahoo.ads.adportal.entity.Product" />
+        </set>
+    </class>
+</hibernate-mapping>

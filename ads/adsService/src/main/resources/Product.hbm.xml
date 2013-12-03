@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 12, 2012 4:50:07 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.yahoo.ads.adportal.entity.Product" table="product" catalog="world">
+        <id name="productid" type="java.lang.Integer">
+            <column name="productid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="com.yahoo.ads.adportal.entity.Customer" fetch="select">
+            <column name="customerid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="contact" class="com.yahoo.ads.adportal.entity.Contact" fetch="select">
+            <column name="contactid" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="25" />
+        </property>
+        <property name="picture" type="binary">
+            <column name="picture" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price" precision="22" scale="0" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="1" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="40" />
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

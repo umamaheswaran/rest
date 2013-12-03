@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 12, 2012 4:50:07 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.yahoo.ads.adportal.entity.Cust" table="cust" catalog="world">
+        <id name="customerid" type="java.lang.Integer">
+            <column name="customerid" />
+        </id>
+        <property name="customername" type="string">
+            <column name="customername" length="40" />
+        </property>
+         <property name="location" type="string">
+            <column name="location" length="25" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="create_date" length="10" />
+        </property>
+        <property name="lastUpdate" type="date">
+            <column name="last_update" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>
