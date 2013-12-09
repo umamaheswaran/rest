@@ -90,7 +90,7 @@ public class CustomerService {
 					throws MessagingException {
 				mimeMessage.setRecipient(Message.RecipientType.TO,
 						new InternetAddress(contacts.getEmail()));
-				mimeMessage.setFrom(new InternetAddress("umatg@yahoo-inc.com"));
+				mimeMessage.setFrom(new InternetAddress(""));
 				mimeMessage.setSubject("test mail");
 				mimeMessage.setText("Dear " +
 				contacts.getLastName() +
